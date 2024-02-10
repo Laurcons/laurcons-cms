@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_versions",
+  "info": {
+    "singularName": "project-version",
+    "pluralName": "project-versions",
+    "displayName": "Project Version"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "links": {
+      "type": "json",
+      "required": true
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project.project",
+      "mappedBy": "project_versions"
+    }
+  }
+}
